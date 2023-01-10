@@ -1,0 +1,2 @@
+class BeTransactonsController < ApplicationController
+end

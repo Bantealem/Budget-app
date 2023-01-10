@@ -74,3 +74,5 @@ end
 
 # Authentication
 gem 'devise'
+
+gem 'letter_opener'

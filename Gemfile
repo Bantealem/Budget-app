@@ -71,7 +71,6 @@ group :test do
   gem 'webdrivers'
 end
 
-
 # Authentication
 gem 'devise'
 

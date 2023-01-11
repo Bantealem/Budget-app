@@ -1,2 +1,0 @@
-class BeTransactonsController < ApplicationController
-end

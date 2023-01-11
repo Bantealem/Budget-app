@@ -1,1 +1,22 @@
-<h1>List of categories</h1>
+<%= stylesheet_link_tag "category_controller" %>
+
+<div class="conatiner">
+<table class="table table-striped">
+    <tr>
+      <th scope="col">Category</th>
+      <th scope="col">Icon</th>
+    </tr>
+
+    <% @categories.each do |category| %>
+      <tr>
+      <td scope="row"><%= category.name%></td>
+      <td scope="row"><%= category.icon%></td>
+     </tr>
+    <% end %>
+</table>
+<%=link_to "Add Food", new_category_path, class: "btn btn-primary"%>
+</div>
+
+
+
+

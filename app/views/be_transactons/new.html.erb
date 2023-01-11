@@ -1,27 +1,27 @@
 <p class="text-center fs-2 fw-bold">Categories Registration</p>
 
-<%= form_with url: categories_path, model: @category, method: :post, class: 'p-2 m-4' do |f|%>
+<%= form_with url: be_transactions_path, model: @be_transaction, method: :post, class: 'p-2 m-4' do |f|%>
   <%if @category.errors.any?%>
 
     <div class='alert alert-danger'>
       <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
 
-    <% @category.errors.full_messages.each do |msg|%>
+    <% @be_transaction.errors.full_messages.each do |msg|%>
       <p><%=msg%></p>
      <%end%>
     </div>
   <%end%>
   <div class="mb-2 g-2">
-  <%= f.label :category, "Category Name ", class: "col-sm-2 col-form-label form-label fs-4 fw-bold" %>
+  <%= f.label :be_transaction, "Transaction Name ", class: "col-sm-2 col-form-label form-label fs-4 fw-bold" %>
     <div class="col-sm-10">
     <%= f.text_field :name, required:true, class: "form-control form-control-lg form-control-sm", placeholder: 'Eg. Alzormi '%>
     </div>
   </div>
 
     <div class="mb-2 g-2">
-  <%= f.label :category, "Category Icon ", class: "col-sm-2 col-form-label form-label fs-4 fw-bold" %>
+  <%= f.label :be_transaction, "Transaction Amount ", class: "col-sm-2 col-form-label form-label fs-4 fw-bold" %>
     <div class="col-sm-10">
-    <%= f.text_field :icon, required:true, class: "form-control form-control-lg form-control-sm", placeholder: 'Eg. Alzormi '%>
+    <%= f.text_field :amount, required:true, class: "form-control form-control-lg form-control-sm", placeholder: 'Eg. Alzormi '%>
     </div>
   </div>
 

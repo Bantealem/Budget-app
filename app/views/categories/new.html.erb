@@ -1,3 +1,4 @@
+<div class="d-flex flex-column justify-content-between align-items-between">
 <p class="text-center fs-2 fw-bold">Categories Registration</p>
 
 <%= form_with url: categories_path, model: @category, method: :post, class: 'p-2 m-4' do |f|%>
@@ -11,19 +12,17 @@
      <%end%>
     </div>
   <%end%>
-  <div class="mb-2 g-2">
-  <%= f.label :category, "Category Name ", class: "col-sm-2 col-form-label form-label fs-4 fw-bold" %>
-    <div class="col-sm-10">
-    <%= f.text_field :name, required:true, class: "form-control form-control-lg form-control-sm", placeholder: 'Eg. Alzormi '%>
+    <%= form_with model: @category, class: "d-flex flex-column justify-content-between align-items-between" do |form| %>
+    <div class="mb-3">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control" %>
     </div>
-  </div>
-
-    <div class="mb-2 g-2">
-  <%= f.label :category, "Category Icon ", class: "col-sm-2 col-form-label form-label fs-4 fw-bold" %>
-    <div class="col-sm-10">
-    <%= f.text_field :icon, required:true, class: "form-control form-control-lg form-control-sm", placeholder: 'Eg. Alzormi '%>
+    <div class="mb-3">
+      <%= form.label :icon, class: "form-label" %>
+      <%= form.text_field :icon, class: "form-control", placeholder: "Icon URL" %>
     </div>
-  </div>
 
-  <%= f.submit class: 'btn btn-primary'%>
+    <%= form.submit class: "btn btn-primary" %>
+  <% end %>
+  <%= link_to "Back", categories_path, class: "btn btn-secondary mt-2" %>
 <%end%>

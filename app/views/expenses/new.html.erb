@@ -1,29 +1,21 @@
-<p class="text-center fs-2 fw-bold">Transaction Registration</p>
-
-<%= form_with url: expenses_path, model: @expense, method: :post, class: 'p-2 m-4' do |f|%>
-  <%if @expense.errors.any?%>
-
-    <div class='alert alert-danger'>
-      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-
-    <% @expense.errors.full_messages.each do |msg|%>
-      <p><%=msg%></p>
-     <%end%>
+<div class="d-flex flex-column justify-content-between align-items-between">
+ 
+  <%= form_with model: @expense, url: category_expenses_path, class: "d-flex flex-column justify-content-between align-items-between" do |form| %>
+    <div class="mb-3">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control" %>
     </div>
-  <%end%>
-  <div class="mb-2 g-2">
-  <%= f.label :expense, "Transaction Name ", class: "col-sm-2 col-form-label form-label fs-4 fw-bold" %>
-    <div class="col-sm-10">
-    <%= f.text_field :name, required:true, class: "form-control form-control-lg form-control-sm", placeholder: 'Eg. Alzormi '%>
+    <div class="mb-3">
+      <%= form.label :amount, class: "form-label" %>
+      <%= form.number_field :amount, class: "form-control" %>
     </div>
-  </div>
-
-    <div class="mb-2 g-2">
-  <%= f.label :expense, "Transaction Amount ", class: "col-sm-2 col-form-label form-label fs-4 fw-bold" %>
-    <div class="col-sm-10">
-    <%= f.number_field :amount, required:true, class: "form-control form-control-lg form-control-sm", placeholder: 'Eg. Alzormi '%>
+    <div class="mb-3">
+      <%= form.collection_select(:category_ids, current_user.categories, :id, :name, {}, { multiple: true, size: 7, class: "form-select" }) %>
     </div>
-  </div>
 
-  <%= f.submit class: 'btn btn-primary'%>
-<%end%>
+    <%= form.submit class: "btn btn-primary" %>
+
+  <% end %>
+
+  <%= link_to "Back", category_path(@category), class: "btn btn-secondary mt-2" %>
+</div>

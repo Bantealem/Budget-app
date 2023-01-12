@@ -1,22 +1,24 @@
-<%= stylesheet_link_tag "category_controller" %>
+<div class="d-flex flex-column justify-content-between align-items-between" style="height: 80vh">
+  <h1 class="mb-3">Categories</h1>
 
-<div class="conatiner">
-<table class="table table-striped">
-    <tr>
-      <th scope="col">Category</th>
-      <th scope="col">Icon</th>
-    </tr>
-
+  <div>
     <% @categories.each do |category| %>
-      <tr>
-      <td scope="row"><%= category.name%></td>
-      <td scope="row"><%= category.icon%></td>
-     </tr>
+      <div class="card mb-1">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <img src="<%= category.icon %>" width=60 height=60 , class= 'col-4 py-1'>
+            </div> 
+            <div class="col">
+              <%= link_to category.name, category_path(category) %>
+            </div>
+            <div class="col">
+              $<%= category.expenses.sum(:amount) %>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
-</table>
-<%=link_to "Add Food", new_category_path, class: "btn btn-primary"%>
+  </div>
+  <%= link_to "Add new category", new_category_path, class: "btn btn-success mt-3" %>
 </div>
-
-
-
-

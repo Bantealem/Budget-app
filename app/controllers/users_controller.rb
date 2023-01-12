@@ -1,8 +1,4 @@
-class UsersController < ApplicationController
-  before_action :authenticate_user!
-  def index
-    redirect_to user_path(current_user)
-  end
-
-  def show; end
+class HomeController < ApplicationController
+  skip_before_action :authenticate_user!
+  def index; end
 end

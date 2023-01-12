@@ -1,11 +1,13 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
   def index
-    @categories = Category.all.where(user_id: current_user.id)
+    @categories = current_user.categories
   end
 
   def show
     @category = Category.find(params[:id])
+    @expenses = @category.expenses.order(created_at: :desc)
+    @total = @expenses.sum(:amount)
   end
 
   def new
@@ -13,10 +15,10 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    category = Category.new(category_params)
-    category.user_id = current_user.id
+    @category = Category.new(category_params)
+    @category.user_id = current_user.id
 
-    if category.save
+    if @category.save
       redirect_to categories_path, notice: 'Category created successfully'
     else
       render :new, status: 422

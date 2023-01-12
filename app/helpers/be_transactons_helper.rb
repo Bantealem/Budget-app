@@ -1,0 +1,2 @@
+module BeTransactonsHelper
+end

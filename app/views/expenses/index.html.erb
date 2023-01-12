@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag "category_controller" %>
+
+<div class="conatiner">
+<table class="table table-striped">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Amount</th>
+    </tr>
+
+    <% @expenses.each do |expense| %>
+      <tr>
+      <td scope="row"><%= expense.name%></td>
+      <td scope="row"><%= expense.amount%></td>
+     </tr>
+    <% end %>
+</table>
+<%=link_to "Add Expense",expenses_new_path, class: "btn btn-primary"%>
+</div>
+
+
+
+

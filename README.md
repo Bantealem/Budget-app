@@ -93,10 +93,8 @@ To run the project, execute the following command:
 ### Run tests
 
 To run tests, run the following command:
-
-Live Server
  
- [LiveServer](https://budget-o4f5.onrender.com)
+
 `Rspec spec`
 
 ## 👥 Authors <a name="authors"></a>

@@ -99,6 +99,8 @@ To run tests, run the following command:
 
 [LiveSrever](https://budget-app-5xj4.onrender.com/)
 
+[Live Video](https://drive.google.com/file/d/10vCHM7SmV-0hOcjI_GKcSR-9yF2jfYKV/view?usp=sharing)
+
 ## 👥 Authors <a name="authors"></a>
 
 👤 Bantealem Geto

@@ -92,5 +92,12 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
+  
+  url: <%= ENV["MY_APP_DATABASE_URL"] %>
+
+production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV["DATABASE_URL"] %>
+  database: Budget_App_production
+  username: Budget_App
+  password: <%= ENV["BUDGET_APP_DATABASE_PASSWORD"] %>

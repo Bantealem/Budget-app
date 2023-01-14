@@ -1,14 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Categories', type: :feature do
-  # describe 'index page' do
-  #   # before(:example) do
-  #     @user = User.create(name: 'John', email: 'johannes@example.com', password: 'password')
-  #     sign_in @user
-  #     @category = Category.create(name: 'food', icon: 'fas fa-utensils', user_id: @user.id)
-  #     visit categories_path
-  # end
-
   it 'renders name of category' do
     visit 'users/sign_in'
     expect(page).to have_content('Log in')
@@ -24,5 +16,33 @@ RSpec.describe 'Categories', type: :feature do
     expect(page).to have_content('Sign up')
   end
 
-  # end
+  it 'renders new_user_registration_path' do
+    visit new_user_registration_path
+    expect(page).to have_content('Sign up')
+  end
+
+  it 'renders user_session_path' do
+    visit user_session_path
+    expect(page).to have_content('Log in')
+  end
+
+  it 'renders new_user_session_path' do
+    visit new_user_session_path
+    expect(page).to have_content('Log in')
+  end
+
+  it 'renders new_user_password_path' do
+    visit new_user_password_path
+    expect(page).to have_content('Forgot your password?')
+  end
+
+  it 'renders new_user_confirmation_path' do
+    visit new_user_confirmation_path
+    expect(page).to have_content('Resend confirmation instructions')
+  end
+
+  it 'renders new_user_unlock_path' do
+    visit new_user_unlock_path
+    expect(page).to have_content('Resend unlock instructions')
+  end
 end

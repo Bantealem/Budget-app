@@ -97,7 +97,7 @@ To run tests, run the following command:
 
 `Rspec spec`
 
-[LiveSrever](https://budget-app-5xj4.onrender.com/)
+[LiveSrever](https://budget-app-5xj4.onrender.com)
 
 [Live Video](https://drive.google.com/file/d/10vCHM7SmV-0hOcjI_GKcSR-9yF2jfYKV/view?usp=sharing)
 

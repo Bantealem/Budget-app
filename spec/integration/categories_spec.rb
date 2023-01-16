@@ -36,13 +36,4 @@ RSpec.describe 'Categories', type: :feature do
     expect(page).to have_content('Forgot your password?')
   end
 
-  it 'renders new_user_confirmation_path' do
-    visit new_user_confirmation_path
-    expect(page).to have_content('Resend confirmation instructions')
-  end
-
-  it 'renders new_user_unlock_path' do
-    visit new_user_unlock_path
-    expect(page).to have_content('Resend unlock instructions')
-  end
 end

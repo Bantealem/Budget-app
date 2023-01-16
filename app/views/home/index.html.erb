@@ -1,0 +1,13 @@
+
+
+<div class="container w-25 d-flex flex-column align-items-center p-3 mx-auto">
+  <h1 class="mb-5">Budget App</h1>
+
+  <% if user_signed_in? %>
+    <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-warning mb-2" %>
+  <% else %>
+    <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary mb-2" %><br>
+    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-info" %>
+  <% end %>
+
+</div>

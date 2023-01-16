@@ -1,0 +1,31 @@
+<div class="d-flex flex-column justify-content-between align-items-between" style="height: 80vh">
+  <div class="row">
+    <div class="col-8">
+      <h2><%= @category.name %></h2>
+    </div>
+    <div class="col-4">
+      <p>$<%= @total %></p>
+    </div>
+  </div>
+
+    <div>
+    <% @expenses.each do |expense| %>
+      <div class="card mb-2">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-8">
+              <%= expense.name %>
+            </div>
+            <div class="col-4">
+              $<%= expense.amount %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+    <div class="d-flex flex-column justify-content-between align-items-between">
+    <%= link_to "Add new expense", new_category_expense_path(@category), class: "btn btn-success" %> <br>
+    <%= link_to "Back", categories_path, class: "btn btn-secondary" %>
+  </div>
+</div>
